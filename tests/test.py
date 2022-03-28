@@ -34,7 +34,7 @@ class TestMAE(unittest.TestCase):
         message, result = self.mae.get_all_summary_balance()
         self.assertEqual(message, 'success')
         self.assertTrue(len(result))
-        print(result)
+        
 
 if __name__ == '__main__':
     unittest.main()

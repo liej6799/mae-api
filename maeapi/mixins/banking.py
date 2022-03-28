@@ -17,5 +17,13 @@ class BankingMixin:
         "checkMae" : "true"} 
         response = self._send_banking_get_request(endpoint, body)  
         message = parse_summary_balance_message(response)
+
+        res = []
         result = parse_all_summary_balance(response)    
-        return message, result    
+        for i in result:
+            res.append({
+                'name':i['name'],
+                'number':i['number'],
+                'balance':i['balance']})
+     
+        return message, res    
